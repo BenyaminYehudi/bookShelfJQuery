@@ -17,5 +17,7 @@ $(document).ready(function(){
     newLi.append(nameDiv).append(authorDiv).append(scoreDiv);
     $("ul").append(newLi);
     books.push(newBook);
+    
+    $(".addBookForm").append( "<button>x</button>" );
   });
 });
