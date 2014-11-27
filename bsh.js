@@ -20,8 +20,10 @@ $(document).ready(function(){
     $("ul").append(newLi);
     books.push(newBook);
     
-    $("newLi button:nth(1)").on("click", function(){
-      $("newLi").remove();
+    $("x").click(function(event) {
+  event.preventDefault();
+  $(this).parents('.li').remove();
+});
     });
   });
 });
