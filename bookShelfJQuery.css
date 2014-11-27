@@ -1,1 +1,19 @@
-stuff
+    ul {
+    	list-style-type: none;
+    	width: 600px;
+    }
+    ul li {
+    	border: 1px solid black;
+    	height: 40px;
+    	line-height: 40px;
+    	display:flex;
+    }
+    
+    ul li div {
+    	flex: 4;
+    }
+    
+    
+    ul li div:nth-child(3) {
+    	flex: 1;
+    }
