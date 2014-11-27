@@ -14,10 +14,9 @@ $(document).ready(function(){
     authorDiv.html(newBook.authorName);
     var scoreDiv = $("<div>");
     scoreDiv.html(newBook.score);
-    newLi.append(nameDiv).append(authorDiv).append(scoreDiv);
+    var deleteBook = $("<button>x</button>")
+    newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(deleteBook);
     $("ul").append(newLi);
     books.push(newBook);
-    
-    $("newLi").append( "<button>x</button>" );
   });
 });
