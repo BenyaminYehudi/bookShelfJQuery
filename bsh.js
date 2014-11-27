@@ -15,7 +15,8 @@ $(document).ready(function(){
     var scoreDiv = $("<div>");
     scoreDiv.html(newBook.score);
     var deleteBook = $("<button>x</button>")
-    newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(deleteBook);
+    var edit = $("<button>edit</button>")
+    newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(edit).append(deleteBook);
     $("ul").append(newLi);
     books.push(newBook);
     
