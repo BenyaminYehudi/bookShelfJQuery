@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("ul").append(newLi);
     books.push(newBook);
     
-    $("newLi button:nth(0)").on("click", function(){
+    $("newLi button:nth(1)").on("click", function(){
       $("newLi").remove();
     });
   });
