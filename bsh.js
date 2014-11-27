@@ -1,8 +1,9 @@
 var newBook = {};
 $(document).ready(function(){
-  $(".addBookForm button:nth(0)")on("click", function(){
+  $(".addBookForm button:nth(0)")on("click", function()){
   newBook.bookName= $(".addBookForm input:nth(0)").val();
   newBook.authorName= $(".addBookForm input:nth(1)").val();
   newBook.score= $(".addBookForm input:nth(2)").val();
+  console.log(newBook);
   };
 };
