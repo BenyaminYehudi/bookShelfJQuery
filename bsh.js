@@ -18,6 +18,6 @@ $(document).ready(function(){
     $("ul").append(newLi);
     books.push(newBook);
     
-    $(".addBookForm").append( "<button>x</button>" );
+    $("newLi").append( "<button>x</button>" );
   });
 });
