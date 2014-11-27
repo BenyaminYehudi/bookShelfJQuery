@@ -1,7 +1,7 @@
 var books = [];
 
 $(document).ready(function(){
-  $(".addBookForm button").on("click", function(){
+  $(".addBookForm button:nth(0)").on("click", function(){
     var newBook = {};
     newBook.bookName = $(".addBookForm input:nth(0)").val();
     newBook.authorName = $(".addBookForm input:nth(1)").val();
@@ -18,5 +18,9 @@ $(document).ready(function(){
     newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(deleteBook);
     $("ul").append(newLi);
     books.push(newBook);
+    
+    $("newLi button:nth(0)").on("click", function(){
+      $("newLi").remove();
+    });
   });
 });
