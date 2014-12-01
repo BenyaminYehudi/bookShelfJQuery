@@ -9,20 +9,20 @@ $(document).ready(function(){
     newBook.id = "book_" + new Date().getTime();
     var newLi = $("<li>");
     newLi.attr("id", newBook.id);
-    var nameSpan = $("<div>");
-    nameSpan.html(newBook.bookName);
-    var authorSpan = $("<div>");
-    authorSpan.html(newBook.authorName);
-    var scoreSpan = $("<div>");
-    scoreSpan.html(newBook.score);
-    var xSpan = $("<div>");
-    xSpan.html("X");
-    xSpan.on("click", function(){
+    var nameDiv = $("<div>");
+    nameDiv.html(newBook.bookName);
+    var authorDiv = $("<div>");
+    authorDiv.html(newBook.authorName);
+    var scoreDiv = $("<div>");
+    scoreDiv.html(newBook.score);
+    var xButton = $("<button>");
+    xButton.html("x");
+    xButton.on("click", function(){
       $("#" + newBook.id).remove();
     });
-     var editSpan = $("<div>");
-    editSpan.html("Edit");
-    editSpan.on("click", function(){
+     var editButton = $("<button>");
+    editButton.html("edit");
+    editButton.on("click", function(){
       if ($(this).html() === "Edit") {
         var input1 = $("<input>");
       input1.attr("type", "text");
@@ -43,7 +43,7 @@ $(document).ready(function(){
       }
       
     });
-    newLi.append(nameSpan).append(authorSpan).append(scoreSpan).append(xSpan).append(editSpan);
+    newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(xButton).append(editButton);
     $("ul").append(newLi);
     books.push(newBook);
   });
