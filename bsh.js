@@ -53,4 +53,9 @@ $(document).ready(function(){
     $(".addBookForm input:nth(1)").val("");
     $(".addBookForm input:nth(2)").val("");
   });
+  
+  $("body button:nth(0)").on("click", function(){
+    alert("You pressed the Clear List button");
+  });
+  
 });
