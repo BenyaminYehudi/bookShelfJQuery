@@ -47,4 +47,10 @@ $(document).ready(function(){
     $("ul").append(newLi);
     books.push(newBook);
   });
+  
+  $(".addBookForm button:nth(1)").on("click", function(){
+    $(".addBookForm input:nth(0)").val("");
+    $(".addBookForm input:nth(1)").val("");
+    $(".addBookForm input:nth(2)").val("");
+  });
 });
