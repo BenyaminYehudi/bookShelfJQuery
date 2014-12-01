@@ -1,29 +1,52 @@
 var books = [];
 
 $(document).ready(function(){
-  $(".addBookForm button:nth(0)").on("click", function(){
+  $(".addBookForm button").on("click", function(){
     var newBook = {};
     newBook.bookName = $(".addBookForm input:nth(0)").val();
     newBook.authorName = $(".addBookForm input:nth(1)").val();
     newBook.score = $(".addBookForm input:nth(2)").val();
-    
+    newBook.id = "book_" + new Date().getTime();
     var newLi = $("<li>");
-    var nameDiv = $("<div>");
-    nameDiv.html(newBook.bookName);
-    var authorDiv = $("<div>");
-    authorDiv.html(newBook.authorName);
-    var scoreDiv = $("<div>");
-    scoreDiv.html(newBook.score);
-    var deleteBook = $("<button>x</button>")
-    var edit = $("<button>edit</button>")
-    newLi.append(nameDiv).append(authorDiv).append(scoreDiv).append(edit).append(deleteBook);
+    newLi.attr("id", newBook.id);
+    var nameSpan = $("<div>");
+    nameSpan.html(newBook.bookName);
+    var authorSpan = $("<div>");
+    authorSpan.html(newBook.authorName);
+    var scoreSpan = $("<div>");
+    scoreSpan.html(newBook.score);
+    var xSpan = $("<div>");
+    xSpan.html("X");
+    xSpan.on("click", function(){
+      $("#" + newBook.id).remove();
+    });
+     var editSpan = $("<div>");
+    editSpan.html("Edit");
+    editSpan.on("click", function(){
+      if ($(this).html() === "Edit") {
+        var input1 = $("<input>");
+      input1.attr("type", "text");
+      input1.val($("#" + newBook.id + " div:nth(0)").html());
+      var input2 = $("<input>");
+      input2.attr("type", "text");
+      input2.val($("#" + newBook.id + " div:nth(1)").html());
+      var input3 = $("<input>");
+      input3.attr("type", "text");
+      input3.val($("#" + newBook.id + " div:nth(2)").html());
+      
+      $("#" + newBook.id + " div:nth(0)").html(input1);
+      $("#" + newBook.id + " div:nth(1)").html(input2);
+      $("#" + newBook.id + " div:nth(2)").html(input3);
+      $(this).html("Save");
+      } else {
+        $(this).html("Edit");
+      }
+      
+    });
+    newLi.append(nameSpan).append(authorSpan).append(scoreSpan).append(xSpan).append(editSpan);
     $("ul").append(newLi);
     books.push(newBook);
-    
-    $("x").click(function(event) {
-  event.preventDefault();
-  $(this).parents('.li').remove();
+  });
 });
-    });
   });
 });
